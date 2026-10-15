@@ -45,7 +45,7 @@ h1{margin:14px 0 0;font:clamp(56px,13vw,112px)/.92 "Rubik Bubbles",sans-serif;co
 
 <section class="gallery" id="gallery" aria-label="A gallery of favourite photos"></section>
 
-<footer class="end-note">Here is lily, my love.</footer></main>
+<footer class="end-note">Here is Lilly, my love.</footer></main>
 <script>
 (()=>{const items=[],photos=['212F8DC3-B20C-4084-894B-E425CC5BFCEE.jpeg','7CACF4FA-3227-419F-95DC-2C3979EC1ABC.jpeg','D368113B-76CC-4962-B9AE-02A057E5D724.jpeg'];for(let i=0;i<72;i++)items.push({photo:photos[i%photos.length]});const icons=['🍒','🌈','🌸','🌷','🎸','🌺','🍒','🌈','🪷','🎸','🍒','🌼'];for(let i=0;i<72;i++)items.push({icon:icons[i%icons.length]});items.sort(()=>Math.random()-.5);const gallery=document.getElementById('gallery');items.forEach(item=>{const tile=document.createElement('figure');tile.className='gallery-shot';tile.style.setProperty('--float',(12+Math.random()*9)+'s');tile.style.setProperty('--delay',(-Math.random()*16)+'s');tile.style.setProperty('--drift',(Math.random()*16-8)+'px');if(item.photo){const img=document.createElement('img');img.src=item.photo;img.alt='A favourite photo together';tile.appendChild(img)}else{tile.classList.add('emoji-shot');tile.textContent=item.icon;tile.setAttribute('aria-label','Favourite decoration '+item.icon)}gallery.appendChild(tile)})})();
 </script>
