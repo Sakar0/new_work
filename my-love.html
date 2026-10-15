@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ffd9e8">
+<title>My Love</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Caveat:wght@600;700&family=Rubik+Bubbles&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;overflow-x:hidden;color:#673c67;font-family:"Baloo 2",sans-serif;background:radial-gradient(ellipse at 12% 10%,#fff1f6,transparent 36%),radial-gradient(ellipse at 88% 28%,#ffc4dd,transparent 38%),linear-gradient(145deg,#ffdbe9,#fff0e6 58%,#ffd5e5)}
+.bg-sparkles{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.bg-sparkles span{position:absolute;left:var(--x);top:var(--y);font-size:var(--size);opacity:var(--opacity);animation:floaty var(--speed) ease-in-out var(--delay) infinite alternate;filter:drop-shadow(0 3px 4px #bb679444)}
+@keyframes floaty{to{transform:translate(var(--drift),-24px) rotate(8deg)}}
+main{position:relative;z-index:1;width:min(1000px,calc(100% - 28px));margin:auto;padding:22px 0 38px}
+.top{display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#986d91}
+.top a{color:#875a86;text-decoration:none;border-bottom:2px dotted #d48db2}
+.hero{text-align:center;padding:38px 12px 28px}
+.kicker{display:inline-block;padding:7px 15px;border-radius:999px;background:#fff9;font-size:12px;letter-spacing:.16em;color:#985983}
+h1{margin:14px 0 0;font:clamp(56px,13vw,112px)/.92 "Rubik Bubbles",sans-serif;color:#914b80;text-shadow:0 7px 0 #fff8,0 13px 24px #a8477522;transform:rotate(-2deg)}
+.hero p{margin:14px 0 0;font:clamp(23px,5vw,34px) Caveat,cursive;color:#995d87}
+.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px;align-items:center;margin:10px auto 42px}
+.gallery-shot{position:relative;margin:0;padding:8px;background:rgba(255,255,255,.84);border-radius:43% 57% 52% 48% / 45% 39% 61% 55%;box-shadow:0 12px 28px #9c5d872d;animation:photoWiggle var(--float,4s) ease-in-out infinite alternate}
+.gallery-shot:nth-child(4n+1){grid-row:span 2;transform:translateY(12px)}
+.gallery-shot:nth-child(4n+2){border-radius:38% 62% 40% 60% / 55% 43% 57% 45%;transform:translateY(-8px)}
+.gallery-shot:nth-child(4n+3){border-radius:58% 42% 61% 39% / 39% 57% 43% 61%;transform:translateY(20px)}
+.gallery-shot:nth-child(4n){transform:translateY(-17px)}
+.gallery-shot img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:inherit}
+.gallery-shot:nth-child(4n+1) img{aspect-ratio:3/4}
+.gallery-shot figcaption{position:absolute;bottom:13px;left:50%;transform:translateX(-50%);padding:4px 11px;background:#fffE;border-radius:999px;white-space:nowrap;color:#814b76;font:700 12px "Baloo 2",sans-serif}
+@keyframes photoWiggle{to{translate:0 -9px}}
+.end-note{position:relative;text-align:center;margin:40px auto 10px;padding:36px 14px 22px;font:clamp(36px,8vw,68px)/1.05 "Rubik Bubbles",sans-serif;color:#8e4778;text-shadow:0 4px 0 #fff9}
+.end-note span{display:block;margin-top:12px;font:clamp(27px,6vw,42px) Caveat,cursive;color:#a45380}
+.end-sparkle{font-size:.52em;color:#dc76aa}
+@media(max-width:700px){main{width:calc(100% - 20px)}.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:6px}.gallery-shot:nth-child(4n+1){grid-row:span 1}.top{font-size:10px}.hero{padding:30px 4px 22px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="bg-sparkles" id="sparkles" aria-hidden="true"></div>
+<main>
+<header class="top"><span>A LITTLE SOMETHING FOR YOU</span><a href="index.html">← home</a></header>
+<section class="hero"><span class="kicker">CHERRIES • RAINBOWS • LILIES • GUITARS</span><h1>My Love</h1><p>all my favourite things, all in one place ♡</p></section>
+<section class="gallery" id="gallery" aria-label="A gallery of favourite photos"></section>
+<footer class="end-note"><span class="end-sparkle">✿　🍒　🌈　🎸</span>Here is your lily, my love.<span class="end-sparkle">🌸　🍒　🎸　✿</span></footer>
+</main>
+<script>
+(()=>{const decor=['🍒','🌸','🌺','🌈','🎸','✿','❀','🍒','🌷','🎸'];const field=document.getElementById('sparkles');for(let i=0;i<64;i++){const e=document.createElement('span');e.textContent=decor[i%decor.length];e.style.setProperty('--x',Math.random()*100+'%');e.style.setProperty('--y',Math.random()*100+'%');e.style.setProperty('--size',(17+Math.random()*24)+'px');e.style.setProperty('--opacity',(.14+Math.random()*.25).toFixed(2));e.style.setProperty('--speed',(3+Math.random()*6)+'s');e.style.setProperty('--delay',(-Math.random()*6)+'s');e.style.setProperty('--drift',(Math.random()*34-17)+'px');field.appendChild(e)}const photos=['212F8DC3-B20C-4084-894B-E425CC5BFCEE.jpeg','7CACF4FA-3227-419F-95DC-2C3979EC1ABC.jpeg','D368113B-76CC-4962-B9AE-02A057E5D724.jpeg'];const gallery=document.getElementById('gallery');for(let i=0;i<16;i++){const fig=document.createElement('figure'),img=document.createElement('img'),cap=document.createElement('figcaption');fig.className='gallery-shot';fig.style.setProperty('--float',(3+Math.random()*3)+'s');img.src=photos[(i+Math.floor(Math.random()*photos.length))%photos.length];img.alt='A favourite photo together';cap.textContent=['my favourite','you + me','♡','little moments'][i%4];fig.append(img,cap);gallery.appendChild(fig)}})();
+</script>
+</body>
+</html>
